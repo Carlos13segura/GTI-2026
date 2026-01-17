@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import * as AOS from 'aos';
 
 // Import all components
 import { NavbarComponent } from '../../components/navbar/navbar';
@@ -32,29 +33,18 @@ import { FooterComponent } from '../../components/footer/footer';
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })
-export class Home implements OnInit {
-  ngOnInit(): void {
-    this.initAnimations();
-  }
+export class Home implements OnInit, AfterViewInit {
+  ngOnInit(): void { }
 
-  private initAnimations(): void {
+  ngAfterViewInit(): void {
     if (typeof window !== 'undefined') {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('animate-visible');
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
-
-      setTimeout(() => {
-        document.querySelectorAll('.animate-on-scroll').forEach((el) => {
-          observer.observe(el);
-        });
-      }, 100);
+      AOS.init({
+        duration: 800,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 100,
+        delay: 0
+      });
     }
   }
 }

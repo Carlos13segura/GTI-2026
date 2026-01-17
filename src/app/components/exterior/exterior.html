@@ -1,6 +1,6 @@
 <section id="exterior" class="exterior-section section-padding">
     <div class="container">
-        <div class="exterior__header text-center animate-on-scroll">
+        <div class="exterior__header text-center" data-aos="fade-up">
             <h2 class="section-title">Exterior e Interior</h2>
             <p class="section-description">
                 Líneas deportivas y presencia imponente desde cualquier ángulo
@@ -9,7 +9,7 @@
 
         <div class="exterior__gallery">
             @for (image of gallery; track image.alt; let i = $index) {
-            <div class="exterior-card animate-on-scroll" [style.animation-delay]="(i * 80) + 'ms'">
+            <div class="exterior-card" data-aos="zoom-in" [attr.data-aos-delay]="i * 80">
                 <img [src]="image.src" [alt]="image.alt" />
                 <div class="exterior-card__overlay">
                     <iconify-icon icon="mdi:magnify-plus" width="28"></iconify-icon>

@@ -1,13 +1,13 @@
 <section id="colores" class="colores-section section-padding">
     <div class="container">
-        <div class="colores__header text-center animate-on-scroll">
+        <div class="colores__header text-center" data-aos="fade-up">
             <h2 class="section-title">Colores</h2>
             <p class="section-description">
                 Elige el color que mejor exprese tu personalidad
             </p>
         </div>
 
-        <div class="colores__showcase animate-on-scroll">
+        <div class="colores__showcase" data-aos="fade-up" data-aos-delay="200">
             <div class="colores__car-container" [class.transitioning]="isColorTransitioning">
                 <img [src]="selectedColor.image" [alt]="selectedColor.name" class="colores__car-image" />
             </div>

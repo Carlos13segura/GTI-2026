@@ -1,6 +1,6 @@
 <section id="conoce" class="conoce-section section-padding">
     <div class="container">
-        <div class="conoce__header text-center animate-on-scroll">
+        <div class="conoce__header text-center" data-aos="fade-up">
             <h2 class="section-title">Conoce tu Volkswagen</h2>
             <p class="section-description">
                 El Golf GTI 2026 combina el legado deportivo con la innovación más avanzada.
@@ -8,20 +8,20 @@
             </p>
         </div>
 
-        <div class="conoce__showcase animate-on-scroll">
+        <div class="conoce__showcase" data-aos="fade-up" data-aos-delay="200">
             <div class="conoce__car-image">
                 <img [src]="carImage" alt="Golf GTI 2026" />
             </div>
             <div class="conoce__specs">
-                <div class="spec-item">
+                <div class="spec-item" data-aos="zoom-in" data-aos-delay="400">
                     <span class="spec-value">{{ specs.potencia }}</span>
                     <span class="spec-label">Potencia</span>
                 </div>
-                <div class="spec-item">
+                <div class="spec-item" data-aos="zoom-in" data-aos-delay="500">
                     <span class="spec-value">{{ specs.aceleracion }}</span>
                     <span class="spec-label">0-100 km/h</span>
                 </div>
-                <div class="spec-item">
+                <div class="spec-item" data-aos="zoom-in" data-aos-delay="600">
                     <span class="spec-value">{{ specs.torque }}</span>
                     <span class="spec-label">Torque</span>
                 </div>

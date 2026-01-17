@@ -1,6 +1,6 @@
 <section id="interiores" class="interiores-section section-padding">
     <div class="container">
-        <div class="interiores__header animate-on-scroll">
+        <div class="interiores__header" data-aos="fade-up">
             <h2 class="section-title text-center">Conoce los interiores de tu auto</h2>
             <p class="section-description text-center">
                 Cada superficie, cada material y cada detalle del interior del Golf GTI
@@ -10,7 +10,7 @@
 
         <div class="interiores__gallery">
             @for (image of gallery; track image.alt; let i = $index) {
-            <div class="gallery-card animate-on-scroll" [style.animation-delay]="(i * 100) + 'ms'">
+            <div class="gallery-card" data-aos="fade-up" [attr.data-aos-delay]="i * 100">
                 <div class="gallery-card__image">
                     <img [src]="image.src" [alt]="image.alt" />
                     <div class="gallery-card__overlay">

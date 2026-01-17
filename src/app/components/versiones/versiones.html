@@ -1,11 +1,11 @@
 <section id="versiones" class="versiones-section section-padding">
     <div class="container">
-        <div class="versiones__header text-center">
+        <div class="versiones__header text-center" data-aos="fade-up">
             <h2 class="section-title">Versiones</h2>
         </div>
 
         <!-- Version Tabs -->
-        <div class="versiones__tabs">
+        <div class="versiones__tabs" data-aos="fade-up" data-aos-delay="100">
             @for (version of versions; track version.name; let i = $index) {
             <button class="version-tab" [class.active]="currentVersionIndex === i" (click)="selectVersion(i)">
                 {{ version.name }}
@@ -15,7 +15,7 @@
 
         <!-- Version Content -->
         <div class="versiones__content">
-            <div class="versiones__left">
+            <div class="versiones__left" data-aos="fade-right" data-aos-delay="200">
                 <!-- Car Image -->
                 <div class="versiones__image">
                     <img [src]="currentVersion.image" [alt]="currentVersion.name" />
@@ -54,7 +54,7 @@
                 </div>
             </div>
 
-            <div class="versiones__right">
+            <div class="versiones__right" data-aos="fade-left" data-aos-delay="300">
                 <h3 class="caracteristicas__title">Características</h3>
                 <ul class="caracteristicas__list">
                     @for (caracteristica of currentVersion.caracteristicas; track caracteristica) {
