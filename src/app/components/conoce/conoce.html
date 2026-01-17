@@ -1,0 +1,31 @@
+<section id="conoce" class="conoce-section section-padding">
+    <div class="container">
+        <div class="conoce__header text-center animate-on-scroll">
+            <h2 class="section-title">Conoce tu Volkswagen</h2>
+            <p class="section-description">
+                El Golf GTI 2026 combina el legado deportivo con la innovación más avanzada.
+                Cada detalle está diseñado para ofrecerte una experiencia de conducción inigualable.
+            </p>
+        </div>
+
+        <div class="conoce__showcase animate-on-scroll">
+            <div class="conoce__car-image">
+                <img [src]="carImage" alt="Golf GTI 2026" />
+            </div>
+            <div class="conoce__specs">
+                <div class="spec-item">
+                    <span class="spec-value">{{ specs.potencia }}</span>
+                    <span class="spec-label">Potencia</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-value">{{ specs.aceleracion }}</span>
+                    <span class="spec-label">0-100 km/h</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-value">{{ specs.torque }}</span>
+                    <span class="spec-label">Torque</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

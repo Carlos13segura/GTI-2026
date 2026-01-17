@@ -1,0 +1,30 @@
+<section id="interiores" class="interiores-section section-padding">
+    <div class="container">
+        <div class="interiores__header animate-on-scroll">
+            <h2 class="section-title text-center">Conoce los interiores de tu auto</h2>
+            <p class="section-description text-center">
+                Cada superficie, cada material y cada detalle del interior del Golf GTI
+                está pensado para envolverte en una experiencia premium.
+            </p>
+        </div>
+
+        <div class="interiores__gallery">
+            @for (image of gallery; track image.alt; let i = $index) {
+            <div class="gallery-card animate-on-scroll" [style.animation-delay]="(i * 100) + 'ms'">
+                <div class="gallery-card__image">
+                    <img [src]="image.src" [alt]="image.alt" />
+                    <div class="gallery-card__overlay">
+                        <iconify-icon icon="mdi:magnify-plus" width="32"></iconify-icon>
+                    </div>
+                </div>
+                @if (image.title) {
+                <div class="gallery-card__content">
+                    <h4 class="gallery-card__title">{{ image.title }}</h4>
+                    <p class="gallery-card__desc">{{ image.description }}</p>
+                </div>
+                }
+            </div>
+            }
+        </div>
+    </div>
+</section>

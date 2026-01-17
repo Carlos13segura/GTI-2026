@@ -1,0 +1,52 @@
+.footer {
+    background: var(--vw-gray-900);
+    padding: var(--spacing-xl) 0;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: var(--spacing-md);
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    &__brand {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-md);
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+    }
+
+    &__logo {
+        color: var(--vw-white);
+    }
+
+    &__copyright {
+        color: var(--vw-gray-500);
+        font-size: 0.875rem;
+        margin: 0;
+    }
+
+    &__links {
+        display: flex;
+        gap: var(--spacing-lg);
+    }
+
+    &__link {
+        color: var(--vw-gray-400);
+        font-size: 0.875rem;
+        transition: color var(--transition-fast);
+
+        &:hover {
+            color: var(--vw-accent);
+        }
+    }
+}

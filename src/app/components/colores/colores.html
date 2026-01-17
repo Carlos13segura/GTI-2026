@@ -1,0 +1,29 @@
+<section id="colores" class="colores-section section-padding">
+    <div class="container">
+        <div class="colores__header text-center animate-on-scroll">
+            <h2 class="section-title">Colores</h2>
+            <p class="section-description">
+                Elige el color que mejor exprese tu personalidad
+            </p>
+        </div>
+
+        <div class="colores__showcase animate-on-scroll">
+            <div class="colores__car-container" [class.transitioning]="isColorTransitioning">
+                <img [src]="selectedColor.image" [alt]="selectedColor.name" class="colores__car-image" />
+            </div>
+
+            <div class="colores__selector">
+                <span class="colores__selected-name">{{ selectedColor.name }}</span>
+                <div class="colores__options">
+                    @for (color of colors; track color.name) {
+                    <button class="color-btn" [class.active]="selectedColor === color"
+                        [style.background-color]="color.hex"
+                        [style.border-color]="color.hex === '#FFFFFF' ? '#ccc' : color.hex" (click)="selectColor(color)"
+                        [attr.aria-label]="'Seleccionar ' + color.name">
+                    </button>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

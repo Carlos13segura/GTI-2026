@@ -1,0 +1,45 @@
+.conoce-section {
+    background: var(--vw-gray-100);
+}
+
+.conoce__header {
+    margin-bottom: var(--spacing-3xl);
+}
+
+.conoce__showcase {
+    text-align: center;
+}
+
+.conoce__car-image {
+    max-width: 900px;
+    margin: 0 auto var(--spacing-2xl);
+
+    img {
+        filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.3));
+    }
+}
+
+.conoce__specs {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-3xl);
+    flex-wrap: wrap;
+
+    .spec-item {
+        text-align: center;
+    }
+
+    .spec-value {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--vw-blue);
+    }
+
+    .spec-label {
+        font-size: 0.875rem;
+        color: var(--vw-gray-600);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+}

@@ -1,0 +1,161 @@
+.versiones-section {
+    background: var(--vw-white);
+}
+
+.versiones__header {
+    margin-bottom: var(--spacing-xl);
+}
+
+// Version Tabs
+.versiones__tabs {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-2xl);
+    flex-wrap: wrap;
+}
+
+.version-tab {
+    background: transparent;
+    border: 2px solid var(--vw-gray-300);
+    padding: var(--spacing-sm) var(--spacing-xl);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--vw-gray-600);
+    cursor: pointer;
+    border-radius: var(--radius-full);
+    transition: all var(--transition-fast);
+
+    &:hover {
+        border-color: var(--vw-blue);
+        color: var(--vw-blue);
+    }
+
+    &.active {
+        background: var(--vw-blue);
+        border-color: var(--vw-blue);
+        color: var(--vw-white);
+    }
+}
+
+// Version Content
+.versiones__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-3xl);
+    align-items: start;
+
+    @media (max-width: 992px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+// Left Side - Image & Pricing
+.versiones__left {
+    text-align: center;
+}
+
+.versiones__image {
+    margin-bottom: var(--spacing-xl);
+
+    img {
+        max-width: 100%;
+        height: auto;
+        filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+    }
+}
+
+.versiones__pricing {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: var(--vw-gray-100);
+    border-radius: var(--radius-lg);
+
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 480px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.price-item {
+    text-align: center;
+    padding: var(--spacing-sm);
+
+    .price-label {
+        display: block;
+        font-size: 0.75rem;
+        color: var(--vw-gray-600);
+        margin-bottom: var(--spacing-xs);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .price-value {
+        display: block;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--vw-blue);
+        margin-bottom: 2px;
+    }
+
+    .price-note {
+        display: block;
+        font-size: 0.625rem;
+        color: var(--vw-gray-500);
+    }
+}
+
+.versiones__cta {
+    margin-top: var(--spacing-lg);
+}
+
+// Right Side - Características
+.versiones__right {
+    padding: var(--spacing-lg);
+    background: var(--vw-gray-100);
+    border-radius: var(--radius-lg);
+}
+
+.caracteristicas__title {
+    font-size: 1.25rem;
+    color: var(--vw-blue);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--vw-blue);
+}
+
+.caracteristicas__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.caracteristicas__item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-xs) 0;
+    font-size: 0.9375rem;
+    color: var(--vw-gray-700);
+    border-bottom: 1px solid var(--vw-gray-200);
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    iconify-icon {
+        color: var(--vw-accent);
+        flex-shrink: 0;
+        margin-top: 2px;
+    }
+
+    span {
+        line-height: 1.4;
+    }
+}

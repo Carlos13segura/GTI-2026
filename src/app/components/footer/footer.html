@@ -1,0 +1,16 @@
+<footer class="footer">
+    <div class="container">
+        <div class="footer__content">
+            <div class="footer__brand">
+                <iconify-icon icon="simple-icons:volkswagen" width="48" class="footer__logo"></iconify-icon>
+                <p class="footer__copyright">© {{ currentYear }} Volkswagen de México. Todos los derechos reservados.
+                </p>
+            </div>
+            <div class="footer__links">
+                @for (link of links; track link.label) {
+                <a [href]="link.href" class="footer__link">{{ link.label }}</a>
+                }
+            </div>
+        </div>
+    </div>
+</footer>

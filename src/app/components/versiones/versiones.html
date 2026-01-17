@@ -1,0 +1,70 @@
+<section id="versiones" class="versiones-section section-padding">
+    <div class="container">
+        <div class="versiones__header text-center">
+            <h2 class="section-title">Versiones</h2>
+        </div>
+
+        <!-- Version Tabs -->
+        <div class="versiones__tabs">
+            @for (version of versions; track version.name; let i = $index) {
+            <button class="version-tab" [class.active]="currentVersionIndex === i" (click)="selectVersion(i)">
+                {{ version.name }}
+            </button>
+            }
+        </div>
+
+        <!-- Version Content -->
+        <div class="versiones__content">
+            <div class="versiones__left">
+                <!-- Car Image -->
+                <div class="versiones__image">
+                    <img [src]="currentVersion.image" [alt]="currentVersion.name" />
+                </div>
+
+                <!-- Pricing Grid -->
+                <div class="versiones__pricing">
+                    <div class="price-item">
+                        <span class="price-label">Precio de lista</span>
+                        <span class="price-value">{{ currentVersion.precioLista }}</span>
+                        <span class="price-note">M.N Incluye IVA.</span>
+                    </div>
+                    <div class="price-item">
+                        <span class="price-label">Precio de contado</span>
+                        <span class="price-value">{{ currentVersion.precioContado }}</span>
+                        <span class="price-note">M.N Incluye IVA.</span>
+                    </div>
+                    <div class="price-item">
+                        <span class="price-label">Precio financiado</span>
+                        <span class="price-value">{{ currentVersion.precioFinanciado }}</span>
+                        <span class="price-note">M.N Incluye IVA.</span>
+                    </div>
+                    <div class="price-item">
+                        <span class="price-label">Rendimiento</span>
+                        <span class="price-value">{{ currentVersion.rendimiento }}</span>
+                    </div>
+                    <div class="price-item">
+                        <span class="price-label">Potencia</span>
+                        <span class="price-value">{{ currentVersion.potencia }}</span>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="versiones__cta">
+                    <button class="btn-vw-primary btn-lg">Cotizar</button>
+                </div>
+            </div>
+
+            <div class="versiones__right">
+                <h3 class="caracteristicas__title">Características</h3>
+                <ul class="caracteristicas__list">
+                    @for (caracteristica of currentVersion.caracteristicas; track caracteristica) {
+                    <li class="caracteristicas__item">
+                        <iconify-icon icon="mdi:check" width="18"></iconify-icon>
+                        <span>{{ caracteristica }}</span>
+                    </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

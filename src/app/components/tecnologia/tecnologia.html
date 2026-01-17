@@ -1,0 +1,35 @@
+<section id="tecnologia" class="tecnologia-section section-padding">
+    <div class="container">
+        <div class="tecnologia__grid">
+            <div class="tecnologia__content animate-on-scroll">
+                <h2 class="section-title">Tecnología</h2>
+                <p class="section-description">
+                    El Golf GTI 2026 incorpora la tecnología más avanzada para mantenerte
+                    conectado y en control.
+                </p>
+
+                <div class="tech-features">
+                    @for (feature of features; track feature.title; let i = $index) {
+                    <div class="tech-feature" [style.animation-delay]="(i * 100) + 'ms'">
+                        <div class="tech-feature__icon">
+                            <iconify-icon [attr.icon]="feature.icon" width="28"></iconify-icon>
+                        </div>
+                        <div class="tech-feature__text">
+                            <h4>{{ feature.title }}</h4>
+                            <p>{{ feature.description }}</p>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+
+            <div class="tecnologia__image animate-on-scroll delay-200">
+                <img [src]="techImage" alt="Sistema de infotainment GTI" />
+                <div class="tecnologia__badge glass">
+                    <iconify-icon icon="mdi:check-decagram" width="24"></iconify-icon>
+                    <span>Discover Pro</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

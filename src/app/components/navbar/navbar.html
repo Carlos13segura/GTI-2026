@@ -1,0 +1,48 @@
+<nav class="navbar">
+    <div class="container">
+        <div class="navbar__content">
+            <!-- Logo -->
+            <div class="navbar__logo">
+                <iconify-icon icon="simple-icons:volkswagen" width="48"></iconify-icon>
+            </div>
+
+            <!-- Desktop Links -->
+            <ul class="navbar__links">
+                @for (link of navLinks; track link.label) {
+                <li><a [href]="link.href">{{ link.label }}</a></li>
+                }
+            </ul>
+
+            <!-- Desktop CTA -->
+            <button class="navbar__cta btn-vw-accent">
+                <iconify-icon icon="mdi:calendar" width="18"></iconify-icon>
+                Agenda tu cita
+            </button>
+
+            <!-- Hamburger Button (Mobile) -->
+            <button class="navbar__hamburger" [class.active]="isMenuOpen" (click)="toggleMenu()" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Overlay -->
+    <div class="navbar__mobile-overlay" [class.active]="isMenuOpen" (click)="closeMenu()"></div>
+
+    <!-- Mobile Menu Sidebar -->
+    <div class="navbar__mobile-menu" [class.active]="isMenuOpen">
+        <ul class="navbar__mobile-links">
+            @for (link of navLinks; track link.label) {
+            <li>
+                <a [href]="link.href" (click)="closeMenu()">{{ link.label }}</a>
+            </li>
+            }
+        </ul>
+        <button class="navbar__mobile-cta btn-vw-accent" (click)="closeMenu()">
+            <iconify-icon icon="mdi:calendar" width="20"></iconify-icon>
+            Agenda tu cita
+        </button>
+    </div>
+</nav>

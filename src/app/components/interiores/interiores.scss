@@ -1,0 +1,78 @@
+.interiores-section {
+    background: var(--vw-white);
+}
+
+.interiores__header {
+    margin-bottom: var(--spacing-3xl);
+}
+
+.interiores__gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.gallery-card {
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    background: var(--vw-white);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    opacity: 1;
+    transform: translateY(0);
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-xl);
+
+        .gallery-card__overlay {
+            opacity: 1;
+        }
+
+        .gallery-card__image img {
+            transform: scale(1.05);
+        }
+    }
+
+    &__image {
+        position: relative;
+        aspect-ratio: 4/3;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
+    }
+
+    &__overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 30, 80, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--vw-white);
+        opacity: 0;
+        transition: opacity var(--transition-normal);
+        cursor: pointer;
+    }
+
+    &__content {
+        padding: var(--spacing-lg);
+    }
+
+    &__title {
+        font-size: 1.125rem;
+        margin-bottom: var(--spacing-xs);
+        color: var(--vw-blue);
+    }
+
+    &__desc {
+        font-size: 0.9375rem;
+        color: var(--vw-gray-600);
+        margin: 0;
+    }
+}

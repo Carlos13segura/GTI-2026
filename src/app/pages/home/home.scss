@@ -1,0 +1,48 @@
+// Home Component Styles
+.home {
+    overflow-x: hidden;
+}
+
+// Common section styles used across components
+.section-label {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--vw-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: var(--spacing-sm);
+}
+
+.section-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--vw-blue);
+    margin-bottom: var(--spacing-md);
+}
+
+.section-description {
+    color: var(--vw-gray-600);
+    font-size: 1.125rem;
+    max-width: 600px;
+    line-height: 1.7;
+}
+
+.text-center {
+    text-align: center;
+
+    .section-description {
+        margin-inline: auto;
+    }
+}
+
+// Scroll animation utilities
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+
+    &.animate-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
